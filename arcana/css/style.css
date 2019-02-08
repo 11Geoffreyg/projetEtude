@@ -1,0 +1,484 @@
+@font-face {
+    font-family: 'Source Sans Bold';
+    src: url('../fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Source Sans Light';
+    src: url('../fonts/sourcesanspro-light-webfont.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-light-webfont.woff') format('woff');
+    font-weight: normal ;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Source Sans';
+    src: url('../fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body, textarea{
+    font-family: 'Source Sans';
+    line-height: 1.5;
+}
+html{
+    font-size: 16px;
+}
+
+.container{
+    width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+}
+.burger{
+    display: none;
+    padding: 14px 4px;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-top: 6px;
+}
+.burger span,
+.burger span::before,
+.burger span::after{
+    display: block;
+    width: 20px;
+    height: 4px;
+    background: rgba(255,255,255,.6);
+    border-radius: 2px;
+    position: relative;
+}
+.burger span::before,
+.burger span::after{
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 0;
+}
+.burger span::after{
+    top: auto;
+    bottom: -7px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+header{
+    background: url(../images/bg01.png);
+
+    background: url(../images/bg02.png) no-repeat left top, url(../images/bg01.png) repeat left top;
+    background-size : 100% 5em, auto;
+    border-bottom: 10px solid #37c0fb;
+}
+header h1{
+    font-size: 1.7rem;
+    font-family: 'Source Sans Light';
+    text-align: center;
+}
+.emphasis{
+    font-family: 'Source Sans';
+}
+nav{
+    background-color: #333;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.3)), url(../images/bg01.png);
+}
+/* on parle qu'au ul du premier niveau */
+nav > ul.container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 0;
+}
+nav > ul > li > a{
+    display: block;
+    padding: 20px;
+}
+nav a{
+    color: rgba(255,255,255,.7);
+}
+nav .active{
+    color: #fff;
+    font-family: 'Source Sans Bold';
+    position: relative;
+}
+nav .active::after{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #37c0fb;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -5px;
+
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+nav li{
+    position: relative;
+}
+/* on cache les sous menus*/
+nav li ul{
+    display: none;
+    z-index: 2;
+    position: absolute;
+    top: 63px;
+    left: 0;
+    text-align: center;
+    width: 140px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 20px 20px -10px rgba(0,0,0,.5);
+
+    background-color: #333;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.1)), url(../images/bg01.png);
+}
+nav li li{
+    padding: 5px;
+}
+nav li li ul{
+    top: 0px;
+    left: 140px;
+    border-radius: 5px;
+}
+nav li:hover > ul{
+    display: block;
+}
+
+body > figure{
+    position: relative;
+}
+body > figure figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(27,27,27,.75);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: 'Source Sans Light';
+    font-size: 1.5rem;
+}
+body > figure figcaption a{
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+.button{
+    background-color: #37c0fb;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.3)), url(../images/bg01.png);
+    display: inline-block;
+    padding: 14px 35px 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Source Sans';
+    margin: 0 20px;
+    font-size: 1rem;
+}
+.white{
+    background: #fff;
+    color: #474747;
+    font-family: 'Source Sans Bold';
+}
+.important{
+    display: flex;
+    justify-content: space-between;
+}
+.important article{
+    width: 25%;
+    text-align: center;
+}
+.important i{
+    background-color: #37c0fb;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.3)), url(../images/bg01.png);
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    border: 7px solid #fff;
+    box-shadow: 0 0 1px #000;
+}
+.important h1{
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+.important p{
+    font-family: 'Source Sans Light';
+}
+.heading{
+    background: url(../images/bg01.png);
+    background: url(../images/bg01.png) repeat,
+                url(../images/bg02.png) no-repeat left top,
+                url(../images/bg03.png) no-repeat left bottom;
+    background-size: auto, 100% 5em, 100% 5em;
+    color: #474747;
+    text-align: center;
+}
+.heading h1{
+    font-family: 'Source Sans Bold';
+    font-size: 2.5rem;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+.heading h2{
+    font-family: 'Source Sans Light';
+    font-size: 1.7rem;
+}
+.heading .container{
+    padding: 50px;
+}
+
+.things{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.things article{
+    width: 45%;
+    margin-bottom: 40px;
+}
+.things figure{
+    float: left;
+    margin-right: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.things h1{
+    font-family: 'Source Sans Bold';
+    font-size: 1.4rem;
+    color: #474747;
+    margin-bottom: 20px;
+}
+.things p{
+    font-family: 'Source Sans Light';
+}
+
+.cta{
+    background-color: #37c0fb;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.3)), url(../images/bg01.png);
+    text-align: center;
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: 'Source Sans Bold';
+}
+footer{
+    background: url(../images/bg01.png) #f7f7f7;
+    color: #474747;
+}
+footer section{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer article{
+    width: 20%;
+}
+footer form{
+    width:45%;
+}
+footer h1{
+    font-family: 'Source Sans Bold';
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+footer article li{
+    font-family: 'Source Sans Light';
+    margin-bottom: 20px;
+}
+footer a{
+    border-bottom: 1px dotted #ccc;
+}
+/* on parle au paragraphe qui suit directement le h1*/
+form h1 + p{
+    display: flex;
+    justify-content: space-between;
+}
+form p{
+    margin-bottom: 20px;
+}
+input,
+textarea{
+    width: 45%;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    padding: 15px; 
+    font-size: 1rem;
+}
+input[type=text]:focus,
+textarea:focus{
+    outline: 1px solid #37c0fb;
+}
+textarea{
+    width: 100%;
+}
+input[type=submit]{
+    background: #555;
+    color: #fff;
+    font-family: 'Source Sans Bold';
+    width: auto;
+    padding: 10px 20px;
+}
+footer ul.container{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+footer ul.container li{
+    margin: 0 15px;
+}
+footer ul.container a{
+    border: none;
+    color: #999;
+}
+.social{
+    display: none;
+}
+footer p.container{
+    text-align: center;
+    color: #999;
+    padding: 0;
+    padding-bottom: 80px;
+}
+footer p.container a{
+    color: #999;
+}
+/* si l'ecran fait moins de 1300px de large */
+@media screen and (max-width: 1300px) {
+    .container{
+        width: 960px;
+    }
+}
+
+/* si l'ecran fait moins de 1000px de large */
+@media screen and (max-width: 1000px) {
+    .container{
+        width: 90%;
+    }
+    .burger{
+        display: inline-block;
+    }
+    nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: none;
+    }
+    nav.open{
+        background-color: #333;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.3)), url(../images/bg01.png);
+    }
+    nav > ul.container {
+        display: none;
+    }
+    nav.open ul{
+        margin: 0;
+        width: auto;
+    }
+    nav.open li{
+        padding: 0;
+    }
+    nav.open li a{
+        padding: 10px 20px;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    nav.open li li a{
+        padding: 10px 40px;
+        color: rgba(255,255,255,.5);
+    }
+    nav.open li li li a{
+        padding: 10px 60px;
+    }
+    nav.open > ul.container{
+        display: block;
+    }
+    nav.open li ul{
+        display: block;
+        position: static;
+        text-align: left;
+    }
+    nav.open ul ul{
+        background: none;
+        box-shadow: none;
+    }
+    nav.open .active::after{
+        content: none;
+    }
+    header{
+        background-color: #333;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.3)), url(../images/bg01.png);
+        border-bottom-width: 4px;
+        position: relative;
+    }
+    header .container{
+        padding: 10px 0;
+    }
+    header h1{
+        font-size: 1.1rem;
+    }
+    header a{
+        color: #fff;
+    }
+    body > figure figcaption{
+        font-size: 1.2rem;
+        position: static;
+        background-color: #333;
+    }
+    body > figure .container{
+        padding: 15px 0 ;
+    }
+    .button{
+        padding: 10px 25px 5px;
+    }
+    .important,
+    .things{
+        flex-direction: column;
+    }
+    .important article,
+    .things article{
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+    .important i{
+        float: left;
+        margin-right: 30px;
+    }
+    .heading .container{
+        padding: 30px 0;
+    }
+    .heading h1{
+        font-size: 1.7rem;
+    }
+    .heading h2{
+        font-size: 1.4rem;
+    }
+    .cta{
+        font-size: 1.3rem;
+    }
+    footer article{
+        width: 45%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    footer form{
+        width: 100%;
+        text-align: center;
+    }
+    input[type=text]{
+        width: 48%;
+    }
+}
+/* pour les petits ecrans */
+@media screen and (max-width: 450px) {
+    footer article{
+        width: 100%;
+    }
+}
